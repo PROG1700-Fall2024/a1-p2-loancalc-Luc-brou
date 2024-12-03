@@ -2,7 +2,7 @@
 #Develop a short term loan calculator program as a console application 
 
 def main():
-    # YOUR CODE STARTS HERE, each line must be indented (one tab)
+    #Loan calculator, ready for marking!
 
     # when user inputs x dollars, calculate interest rate and give weekly payment.
     # should have prompts for dollars, interest, and years
@@ -10,6 +10,7 @@ def main():
     # user inputs interest rate
     # user inputs number of years
     
+    #input prompts for loan amount, interest rate, and number of years
     print("Hello! This program is made to calculate weekly loan payments.")
     print("")
     loan=input("Please input the loan amount in dollars.")
@@ -21,9 +22,16 @@ def main():
     years=input("Please enter the amount of years the loan is for.")
     numberYears=float(years)
     print("")
-    weeklyPayment=print("")
+
+    #tells how much to pay in interest
+    interestAmount=interestRate / 5200
+    #calculates weekly payment
+    weeklyPayment= interestAmount / (1 - ((1 + interestAmount) ** (-52 * numberYears))) * loanAmount
+    #rounds weekly payment
+    roundedWeeklyPayment=round(weeklyPayment,2)
+
     print("")
-    print("You will have to pay",weeklyPayment,"per week.")
+    print("You will have to pay",roundedWeeklyPayment,"per week.")
 
 
     # YOUR CODE ENDS HERE
